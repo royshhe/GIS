@@ -1,0 +1,154 @@
+USE [GISData]
+GO
+/****** Object:  View [dbo].[RP_Con_6_Contract_Open_Overdue_L3_Main_Contract_Overdue]    Script Date: 2021-07-10 1:50:44 PM ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+
+
+/*
+VIEW NAME: RP_Con_6_Contract_Open_Overdue_L1_SR_Main_Contract_In
+PURPOSE: Select all information needed for Contract Overdue Configuration
+
+AUTHOR:	Joseph Tseung
+DATE CREATED: 1999/01/01
+USED BY: Stored Procedure RP_SP_Con_6_Contract_Open_Overdue_Open_Contracts
+MOD HISTORY:
+Name 		Date		Comments
+Joseph Tseung	2000/04/17	Include Vehicle Support Check In contracts with null actual check in location in the voc record
+Sharon L.	Dec 14, 2005	Join Reservation to get Res #.
+*/
+CREATE VIEW [dbo].[RP_Con_6_Contract_Open_Overdue_L3_Main_Contract_Overdue]
+AS
+-- select all contracts currently checked out and expected drop off date is prior to today
+SELECT 
+	'Contract Overdue' AS Configuration,
+	Contract.Status,
+	Vehicle_Class.Vehicle_Type_ID, 
+    	Contract.Pick_Up_Location_ID AS Pick_Up_Location_ID,
+    	Loc1.Location AS Pick_Up_Location_Name, 
+	CONVERT(datetime, CONVERT(varchar(12), Vehicle_On_Contract.Expected_Check_In, 112)) AS Expected_Drop_Off_Date,
+	Contract.Contract_Number, 
+    	Contract.Foreign_Contract_Number, 
+	(case when dbo.Reservation.Foreign_Confirm_Number is NULL then 
+		Cast(dbo.Reservation.Confirmation_Number AS Char(20))
+		else dbo.Reservation.Foreign_Confirm_Number
+	end) AS Res_Number, 
+    	Contract.Last_Name + ', ' + Contract.First_Name AS Customer_Name, 
+	Vehicle_On_Contract.Unit_Number, 
+	0 AS KM_Driven,
+	Vehicle.MVA_Number AS MVA_Number, 
+    	Vehicle.Foreign_Vehicle_Unit_Number,
+	Vehicle_Model_Year.Model_Name, 
+    	Vehicle_Class.Vehicle_Class_Name,
+    	Vehicle_Class.Vehicle_Class_Code + '-' + Vehicle_Class.Vehicle_Class_Name AS Vehicle_Class_Code_Name,
+	Contract.Pick_Up_On AS Check_Out_Date,			-- date contract is actually checked out
+	Vehicle_On_Contract.Expected_Check_In AS Check_In_Date,	-- date contract is expected checked in
+	Vehicle_On_Contract.Expected_Drop_Off_Location_ID  AS Drop_Off_Location_ID,
+	Loc2.Location AS Drop_Off_Location_Name,
+	DATEDIFF(dd,  Vehicle_On_Contract.Expected_Check_In, getDate())  AS Days_Over,
+    	Rate_Name = CASE WHEN Contract.Rate_ID IS NOT NULL-- GIS Rate
+			THEN Vehicle_Rate.Rate_Name
+		             ELSE Quoted_Vehicle_Rate.Rate_Name
+		        END,
+	Contract.Pre_Authorization_Method,
+	vDep.Payment_Method,
+	vDep.Advance_Deposit,
+	Accrued_Revenue = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCC.Total_Contract_Charge , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCC.Total_Contract_Charge), 2) 
+	 END ,
+	[Time&KM] = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCCDetail.[Time&KM] , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCCDetail.[Time&KM]), 2) 
+	 END ,
+	OptionalExtra = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCCDetail.OptionalExtra , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCCDetail.OptionalExtra), 2) 
+	 END ,
+	Coverage = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCCDetail.Coverage , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCCDetail.Coverage), 2) 
+	 END ,
+
+	SalesAccs = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCCDetail.SalesAccs , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCCDetail.SalesAccs), 2) 
+	 END ,
+	Upsell = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCCDetail.Upsell , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCCDetail.Upsell), 2) 
+	 END ,
+	OtherCharges = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCCDetail.OtherCharges , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCCDetail.OtherCharges), 2) 
+	 END ,
+	Discount = CASE
+			 WHEN DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) <> 0   
+				THEN  ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) / CAST( DATEDIFF(dd, Contract.Pick_Up_On, Vehicle_On_Contract.Expected_Check_In) AS DECIMAL(10,2))) * vCCDetail.Discount , 2) 
+				ELSE ROUND((DATEDIFF(dd, Contract.Pick_Up_On, getDate()) * vCCDetail.Discount), 2) 
+	 END 
+FROM 	Contract
+	INNER 
+	JOIN
+    	Vehicle_On_Contract 
+		ON Contract.Contract_Number = Vehicle_On_Contract.Contract_Number
+		AND Contract.Status = 'CO'
+		AND (Vehicle_On_Contract.Actual_Check_In IS NULL OR Vehicle_On_Contract.Actual_Drop_Off_Location_ID IS NULL)
+    	INNER 
+	JOIN
+    	Location Loc1
+		ON Contract.Pick_Up_Location_ID = Loc1.Location_ID
+		AND Loc1.Rental_Location = 1 -- Rental Locations
+	INNER 
+	JOIN
+    	Location Loc2
+		ON Vehicle_On_Contract.Expected_Drop_Off_Location_ID = Loc2.Location_ID
+	INNER 
+	JOIN
+   	Vehicle 
+		ON Vehicle_On_Contract.Unit_Number = Vehicle.Unit_Number
+	INNER 
+	JOIN
+	Vehicle_Model_Year
+		On Vehicle.Vehicle_Model_ID = Vehicle_Model_Year.Vehicle_Model_ID
+     	INNER 
+	JOIN
+    	Vehicle_Class 
+		ON Vehicle.Vehicle_Class_Code = Vehicle_Class.Vehicle_Class_Code
+	LEFT
+	JOIN
+	RP_Con_6_Contract_Open_Overdue_L2_Base_Contract_Charge vCC
+		ON vCC.Contract_Number = Contract.Contract_Number
+	LEFT 
+	JOIN
+    	Vehicle_Rate 
+		ON Contract.Rate_ID = Vehicle_Rate.Rate_ID 
+		AND Contract.Rate_Assigned_Date >= Vehicle_Rate.Effective_Date
+     		AND Contract.Rate_Assigned_Date <= Vehicle_Rate.Termination_Date
+	LEFT 
+	JOIN
+    	Quoted_Vehicle_Rate 
+		ON Contract.Quoted_Rate_ID = Quoted_Vehicle_Rate.Quoted_Rate_ID
+	LEFT
+	JOIN
+	RP_Con_6_Contract_Open_Overdue_L1_Contract_Charge_Detail vCCDetail
+		ON vCCDetail.Contract_Number = Contract.Contract_Number
+	LEFT
+	JOIN
+	RP_Con_6_Contract_Open_Overdue_L1_Base_Deposit vDep
+		ON vDep.Contract_Number = Contract.Contract_Number
+
+	LEFT JOIN
+        	dbo.Reservation 
+		ON dbo.Contract.Confirmation_Number = dbo.Reservation.Confirmation_Number
+
+GO

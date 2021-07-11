@@ -1,0 +1,16 @@
+USE [GISData]
+GO
+/****** Object:  Table [dbo].[FA_Risk_Type_Non_Dep]    Script Date: 2021-07-10 1:50:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FA_Risk_Type_Non_Dep](
+	[Risk_Type] [char](10) NOT NULL,
+	[Allow_Non_Dep] [bit] NULL,
+ CONSTRAINT [PK_FA_Risk_Type_Non_Dep] PRIMARY KEY CLUSTERED 
+(
+	[Risk_Type] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+GO

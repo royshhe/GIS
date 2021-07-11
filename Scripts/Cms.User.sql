@@ -1,0 +1,7 @@
+USE [GISData]
+GO
+/****** Object:  User [Cms]    Script Date: 2021-07-10 1:50:41 PM ******/
+CREATE USER [Cms] FOR LOGIN [BUDGETBC\Cms] WITH DEFAULT_SCHEMA=[Cms]
+GO
+ALTER ROLE [HR] ADD MEMBER [Cms]
+GO

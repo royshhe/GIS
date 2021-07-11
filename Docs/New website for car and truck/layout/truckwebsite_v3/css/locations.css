@@ -1,0 +1,324 @@
+a.tab {
+background: url(../images/locations/rental_tab.png);
+width: 26px;
+height: 38px;
+display: block;
+}
+
+a:hover.tab {
+background-position: 26px 0px;
+}
+
+a.tab_text {
+font-size: 12px;
+font-weight: bold;
+color: #1f1f1f;
+text-decoration: none;
+line-height: 14px;
+}
+
+a:hover.tab_text {
+text-decoration: underline;
+}
+
+.princegeorge {
+position: absolute;
+top: 52px;
+left: 620px;
+}
+
+.princegeorge_txt {
+position: absolute;
+top: 64px;
+left: 532px;
+}
+
+.queenchar {
+position: absolute;
+top: 105px;
+left: 286px;
+}
+
+.queenchar_txt {
+position: absolute;
+top: 71px;
+left: 315px;
+}
+
+.sandspit {
+position: absolute;
+top: 115px;
+left: 303px;
+}
+
+.sandspit_txt {
+position: absolute;
+top: 131px;
+left: 332px;
+}
+
+.porthardy {
+position: absolute;
+top: 280px;
+left: 481px;
+}
+
+.porthardy_txt {
+position: absolute;
+top: 279px;
+left: 411px;
+}
+
+.campbellriver {
+position: absolute;
+top: 297px;
+left: 536px;
+}
+
+.campbellriver_txt {
+position: absolute;
+top: 322px;
+left: 444px;
+}
+
+.courtney {
+position: absolute;
+top: 318px;
+left: 546px;
+}
+
+.courtney_txt {
+position: absolute;
+top: 338px;
+left: 461px;
+}
+
+.comox {
+position: absolute;
+top: 321px;
+left: 558px;
+}
+
+.comox_txt {
+position: absolute;
+top: 350px;
+left: 486px;
+}
+
+.portalberni {
+position: absolute;
+top: 350px;
+left: 549px;
+}
+
+.portalberni_txt {
+position: absolute;
+top: 366px;
+left: 445px;
+}
+
+.parksville {
+position: absolute;
+top: 344px;
+left: 570px;
+}
+
+.parksville_txt {
+position: absolute;
+top: 381px;
+left: 466px;
+}
+
+.tofino {
+position: absolute;
+top: 362px;
+left: 533px;
+}
+
+.tofino_txt {
+position: absolute;
+top: 396px;
+left: 505px;
+}
+
+
+.nanaimo {
+position: absolute;
+top: 357px;
+left: 588px;
+}
+
+.nanaimo_txt {
+position: absolute;
+top: 389px;
+left: 560px;
+}
+
+.duncan {
+position: absolute;
+top: 374px;
+left: 611px;
+}
+
+.duncan_txt {
+position: absolute;
+top: 405px;
+left: 577px;
+}
+
+.victoria {
+position: absolute;
+top: 407px;
+left: 622px;
+}
+
+.victoria_txt {
+position: absolute;
+top: 425px;
+left: 580px;
+}
+
+.powellriver {
+position: absolute;
+top: 310px;
+left: 578px;
+}
+
+.powellriver_txt {
+position: absolute;
+top: 292px;
+left: 582px;
+}
+
+.vancouver {
+position: absolute;
+top: 351px;
+left: 645px;
+}
+
+.vancouver_txt {
+position: absolute;
+top: 330px;
+left: 633px;
+}
+
+.fraservalley {
+position: absolute;
+top: 358px;
+left: 666px;
+}
+
+.fraservalley_txt {
+position: absolute;
+top: 360px;
+left: 694px;
+}
+
+.kamloops {
+position: absolute;
+top: 265px;
+left: 728px;
+}
+
+.kamloops_txt {
+position: absolute;
+top: 280px;
+left: 668px;
+}
+
+.kelowna {
+position: absolute;
+top: 309px;
+left: 764px;
+}
+
+.kelowna_txt {
+position: absolute;
+top: 316px;
+left: 712px;
+}
+
+.salmonarm {
+position: absolute;
+top: 248px;
+left: 780px;
+}
+
+.salmonarm_txt {
+position: absolute;
+top: 243px;
+left: 810px;
+}
+
+.vernon {
+position: absolute;
+top: 273px;
+left: 781px;
+}
+
+.vernon_txt {
+position: absolute;
+top: 281px;
+left: 811px;
+}
+
+.castlegar {
+position: absolute;
+top: 315px;
+left: 815px;
+}
+
+.castlegar_txt {
+position: absolute;
+top: 350px;
+left: 830px;
+}
+
+.trail {
+position: absolute;
+top: 330px;
+left: 805px;
+}
+
+.trail_txt {
+position: absolute;
+top: 365px;
+left: 810px;
+}
+
+
+.penticton {
+position: absolute;
+top: 330px;
+left: 767px;
+}
+
+.penticton_txt {
+position: absolute;
+top: 340px;
+left: 710px;
+}
+
+.nelson {
+position: absolute;
+top: 301px;
+left: 864px;
+}
+
+.nelson_txt {
+position: absolute;
+top: 335px;
+left: 870px;
+}
+
+.cranbrook {
+position: absolute;
+top: 286px;
+left: 914px;
+}
+
+.cranbrook_txt {
+position: absolute;
+top: 320px;
+left: 919px;
+}

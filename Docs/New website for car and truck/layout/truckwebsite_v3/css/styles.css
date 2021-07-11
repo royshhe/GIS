@@ -1,0 +1,979 @@
+html {
+
+}
+
+body {
+background: #d0d0d0 url('../images/temp_bg_bar.jpg') repeat-x;
+margin: 0px;
+padding: 0px;
+text-align: center;
+font-family: Arial, sans-serif;
+}
+
+/*------------------------------------------------------------------------------------------ Header */
+
+.header {
+position: absolute;
+background: url('../images/master/header_bg.png') no-repeat 50% 43px;
+width: 100%;
+min-width: 950px;
+height: 102px;
+z-index: 10;
+text-align: center;
+}
+
+.header_content {
+margin: 0px auto;
+width: 950px;
+height: 102px;
+}
+
+.header_logo {
+float: left;
+margin-left: 20px;
+margin-top: 1px;
+}
+
+.header_number {
+float: left;
+margin-left: 5px;
+margin-top: 2px;
+}
+
+a.header_number {
+font-size: 12px;
+color: #e7e7e7;
+text-decoration: none;
+}
+
+.top_nav {
+position: absolute;
+top: 13px;
+left: 50%;
+width: 950px;
+height: 30px;
+margin-left: -475px;
+}
+
+.main_nav {
+position: absolute;
+top: 43px;
+left: 50%;
+width: 950px;
+height: 59px;
+margin-left: -475px;
+}
+
+ul.top_buttons {
+padding: 0px 20px 0px 0px;
+margin: 0px;
+}
+
+.top_buttons li{
+padding: 0px 2px 0px 0px;
+margin: 0px;
+list-style-type: none;
+display: inline;
+}
+
+ul.main_buttons {
+float:left;
+width:100%;
+padding:0;
+margin:0;
+list-style-type:none;
+}
+
+li.main_buttons {
+display:inline;
+float: left;
+}
+
+a.but_accessories {
+background: url('../images/master/but_accessories.png');
+width: 101px;
+height: 21px;
+display: inline-block;
+}
+
+a.but_movingsupplies {
+background: url('../images/master/but_movingsupplies.png');
+width: 129px;
+height: 21px;
+display: inline-block;
+}
+
+a.but_aboutus {
+background: url('../images/master/but_aboutus.png');
+width: 82px;
+height: 21px;
+display: inline-block;
+}
+
+a.but_conventions {
+background: url('../images/master/but_conventions.png');
+width: 108px;
+height: 21px;
+display: inline-block;
+}
+
+a.but_faq {
+background: url('../images/master/but_faq.png');
+width: 42px;
+height: 21px;
+display: inline-block;
+}
+
+a.tb_hover:hover {
+background-position: 0px 21px;
+}
+
+a.logo_budget {
+background: url('../images/master/logo_budget.png');
+width: 300px;
+height: 57px;
+display: inline-block;
+}
+
+a.but_reservations {
+background: url('../images/master/but_reservations.png');
+width: 130px;
+height: 57px;
+display: inline-block;
+}
+
+a.but_specials {
+background: url('../images/master/but_specials.png');
+width: 130px;
+height: 57px;
+display: inline-block;
+}
+
+a.but_vehicles {
+background: url('../images/master/but_vehicles.png');
+width: 130px;
+height: 57px;
+display: inline-block;
+}
+
+a.but_trucks {
+background: url('../images/master/but_trucks.png');
+width: 130px;
+height: 57px;
+display: inline-block;
+}
+
+a.but_locations {
+background: url('../images/master/but_locations.png');
+width: 130px;
+height: 57px;
+display: inline-block;
+}
+
+a.mainb_hover:hover {
+background-position: 0px -57px;
+}
+
+a.active {
+background-position: 0px -114px;
+}
+
+
+/*------------------------------------------------------------------------------------------Footer */
+
+.footer {
+background: url('../images/master/footer_bg.png') no-repeat center top;
+width: 100%;
+height: 175px;
+text-align: center;
+padding-top: 25px;
+}
+
+.footer_content {
+margin: 0px auto;
+width: 910px;
+}
+
+.footer_left {
+text-align: left;
+float: left;
+}
+
+.footer_text {
+margin-left: 15px;
+}
+
+p.footer_text {
+font-size: 12px;
+color: #494949;
+font-weight: bold;
+line-height: 14px;
+margin: 0px;
+padding: 0px;
+}
+
+p.footer_toll {
+font-size: 12px;
+color: #494949;
+line-height: 14px;
+margin: 0px;
+padding: 0px 0px 5px 0px;
+}
+
+div.footer_nav {
+padding-top: 10px;
+}
+
+ul.footer_nav {
+float:left;
+padding:0;
+margin:0;
+list-style-type:none;
+}
+
+.footer_nav li {
+display:inline;
+float: left;
+padding: 0px 10px 0px 0px;
+}
+
+a.footer_nav {
+font-size: 12px;
+color: #494949;
+text-decoration: none;
+line-height: 12px;
+}
+
+a.footer_nav:hover {
+text-decoration: underline;
+}
+
+.footer_right {
+background: url('../images/master/footer_divider.png') no-repeat left top;
+text-align: right;
+float: right;
+height: 103px;
+}
+
+.footer_social {
+margin-top: 17px;
+}
+
+.socialbox {
+text-align: left;
+margin: -3px 15px 0px 25px;
+}
+
+.fbbox {
+margin-right: 5px;
+}
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+.content {
+position: relative;
+background: url('../images/temp_whitespot.png') no-repeat 50% 0;
+width: 100%;
+overflow: hidden;
+}
+
+p.px11 {
+font-size: 11px;
+margin-top: 5px;
+line-height: 14px;
+}
+
+h2 {
+font-size: 16px;
+}
+
+img {
+border: 0px;
+margin: 0px;
+padding: 0px;
+}
+
+a.px14 {
+font-size: 14px;
+color: #3e3e3e;
+}
+
+a:hover.px14 {
+text-decoration: none;
+}
+
+a.px11 {
+font-size: 11px;
+color: #3e3e3e;
+text-decoration: underline;
+}
+
+a:hover.px11 {
+text-decoration: none;
+}
+
+p {
+font-size: 14px;
+line-height: 16px;
+color: 3e3e3e;
+margin: 0px;
+padding: 0px;
+}
+
+p.px12 {
+font-size: 12px;
+line-height: 16px;
+color: 3e3e3e;
+margin: 0px;
+padding: 0px;
+}
+
+.orange {
+color: #ff6600;
+font-weight: bold;
+}
+
+.clear {
+clear: both;
+}
+
+.ralign {
+text-align: right;
+}
+
+.left {
+float: left;
+}
+
+.right {
+float: right;
+}
+
+.block {
+display: block;
+}
+
+/* -------------------------------------------------------------------------------------Locations*/
+
+.content_locations {
+position: relative;
+background: url('../images/locations/locations_map.png') no-repeat center 0px;
+width: 1000px;
+height: 560px;
+margin: 95px auto 0 auto;
+}
+
+.location_tab {
+float: left;
+text-align: left;
+}
+
+.left_col {
+margin-left: 60px;
+float: left;
+text-align: left;
+}
+
+.title_box {
+margin-top: 87px;
+}
+
+.line {
+margin-top: 20px;
+}
+
+.world_map {
+margin-top: 5px;
+}
+
+.search_box {
+margin-top: 10px;
+}
+
+.locations_gps {
+position: absolute;
+top: 28px;
+left: 712px;
+}
+
+/* -------------------------------------------------------------------------------Store Location*/
+
+.store_col_1 {
+float: left;
+text-align: left;
+margin-left: 25px;
+margin-top: 28px;
+width: 160px;
+}
+
+.store_col_2 {
+float: left;
+text-align: left;
+margin-left: 60px;
+margin-top: 28px;
+}
+
+.store_col_3 {
+float: right;
+text-align: left;
+margin-left: 0px;
+width: 165px;
+height: 290px;
+}
+
+ul.store_nav {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+}
+
+a.viewmap {
+font-size: 12px;
+color: #3e3e3e;
+text-decoration: none;
+font-weight: bold;
+}
+
+a:hover.viewmap {
+font-weight: normal;
+}
+
+.reserve_but {
+background: url(../images/reserve_bg.png) no-repeat;
+width: 144px;
+height: 121px;
+padding-top: 53px;
+padding-left: 7px;
+margin-top: 50px;
+
+}
+
+.reserve_but_car {
+}
+
+.reserve_but_truck {
+margin-top: 5px;
+}
+
+.store_comment {
+width:220px;
+
+}
+
+.but_blk_close {
+float: right;
+}
+
+a.but_blk_close {
+background: url(../images/but_blk_close.png);
+display: block;
+width: 100px;
+height: 24px;
+}
+
+a:hover.but_blk_close {
+background-position: 0px 24px;
+}
+
+a.but_blk_car {
+background: url(../images/but_blk_car.png);
+display: block;
+width: 131px;
+height: 28px;
+}
+
+a.but_blk_truck {
+background: url(../images/but_blk_truck.png);
+display: block;
+width: 131px;
+height: 28px;
+}
+
+a:hover.but_blk_car {
+background-position: 0px 28px;
+}
+
+a:hover.but_blk_truck {
+background-position: 0px 28px;
+}
+
+/*------------------------------------------------------------------------------------------ Resevations */
+
+.reservations_box {
+position: relative;
+background: url(../images/reservations/reso_shadow.png) no-repeat center top;
+width: 1000px;
+height: 622px;
+margin: 74px auto 0px auto;
+}
+
+.reservations_content {
+position: relative;
+top: 59px;
+width: 875px;
+margin: 0 auto;
+height: 500px;
+}
+
+.pull_wrap {
+overflow: hidden;
+}
+
+.pull_group {
+position: absolute;
+top: 87px;
+width: 869px;
+margin: 0 auto;
+z-index: 1000000;
+max-height: 358px;
+}
+
+.pull_top {
+background: url(../images/reservations/pulltop.png) no-repeat center top;
+width: 869px;
+height: 10px;
+}
+
+.pull_body {
+background: url(../images/reservations/pullbody.png) no-repeat center top;
+width: 869px;
+height: 326px;
+}
+
+.pull_bottom {
+background: url(../images/reservations/pullbottom.png) no-repeat center top;
+width: 869px;
+height: 22px;
+}
+
+.pull_top_filler {
+width: 869px;
+height: 10px;
+}
+
+.pull_body_filler {
+width: 869px;
+height: 326px;
+}
+
+.pull_bottom_filler {
+width: 869px;
+height: 22px;
+}
+
+.pull_hide {
+background: url(../images/reservations/pullhide.png) no-repeat center top;
+width: 869px;
+height: 22px;
+}
+
+.pull_show {
+background: url(../images/reservations/pull_show.png) no-repeat center top;
+width: 869px;
+height: 22px;
+}
+
+.title_reso {
+position: absolute;
+top: 85px;
+left: 92px;
+}
+
+.header_reso {
+position: relative;
+top: 32px;
+left: 38px;
+text-align: left;
+width: 472px;
+}
+
+.reso_box1 {
+float: left;
+text-align: left;
+width: 224px;
+margin-left: 39px;
+margin-top: 35px;
+}
+
+.reso_box2 {
+float: left;
+text-align: left;
+width: 224px;
+margin-left: 24px;
+margin-top: 35px;
+}
+
+.reso_box3 {
+float: left;
+text-align: left;
+width: 293px;
+margin-left: 24px;
+margin-top: -27px;
+}
+
+.reso_line {
+height: 3px;
+background-color: #e2e2de;
+width: 100%;
+}
+
+.reso_line_drk {
+height: 3px;
+background-color: #414141;
+width: 100%;
+}
+
+.location_details {
+padding-top: 10px;
+padding-bottom: 2px;
+overflow: hidden;
+}
+
+.reso_search {
+padding-left: 4px;
+}
+
+.top10 {
+padding-top: 10px;
+overflow: hidden;
+}
+
+.top20 {
+padding-top: 20px;
+overflow: hidden;
+}
+
+.bot10 {
+padding-bottom: 10px;
+overflow: hidden;
+}
+
+.w224 {
+width: 224px;
+}
+
+.w130 {
+width: 130px;
+}
+
+.pickaclass {
+margin-top: -2px;
+}
+
+.check {
+float: left;
+}
+
+.check_txt {
+float: left;
+width: 70px;
+padding-left: 12px;
+}
+
+.rentacar {
+position: absolute;
+top:178px;
+left:190px;
+}
+
+.rentatruck {
+position: absolute;
+top:178px;
+left: 521px;
+}
+
+.reso_bottom {
+position: absolute;
+top: 508px;
+left: 50%;
+margin-left: -425px;
+height: 28px;
+width: 850px;
+}
+
+.breadbar {
+float: left;
+height: 28px;
+background-color: red;
+}
+
+.breadbuttons {
+float: right;
+}
+
+.but_nextstep {
+border:0;
+background:transparent url('../images/reservations/button_nextstep.png') no-repeat 0 0;
+width:131px; height: 28px;
+}
+
+.but_checkrate {
+border:0;
+background:transparent url('../images/reservations/button_checkrate.png') no-repeat 0 0;
+width:131px; height: 28px;
+}
+
+a.but_cancelreservation {
+border:0;
+background:transparent url('../images/reservations/but_cancelreservation.png') no-repeat 0 0;
+width:158px; height: 28px;
+display: inline-block;
+}
+
+a.but_newreservation {
+border:0;
+background:transparent url('../images/reservations/but_newreservation.png') no-repeat 0 0;
+width:138px; height: 28px;
+display: inline-block;
+}
+
+a.but_rules {
+border:0;
+background:transparent url('../images/reservations/but_rules.png') no-repeat 0 0;
+width:147px; height: 28px;
+display: inline-block;
+}
+
+a.but_print {
+border:0;
+background:transparent url('../images/reservations/but_print.png') no-repeat 0 0;
+width:92px; height: 28px;
+display: inline-block;
+}
+
+a.reshover:hover {
+background-position: 0 -28px;
+}
+
+.reshover:hover {
+background-position: 0 -28px;
+}
+
+label {
+font-size: 14px;
+}
+
+.reso_trip {
+margin-left: 38px;
+margin-top: 79px;
+}
+
+.trip_txt {
+text-align: left; 
+margin-top: 0px;
+margin-left: 10px;
+}
+
+.reso_vehicle_txt {
+float: left;
+width: 178px;
+}
+
+.reso_vehicle_thumb {
+float: left;
+width: 115px;
+}
+
+.undercontent {
+position: relative;
+top: 137px;
+left: 0px;
+width: 830px;
+overflow: hidden;
+margin: 0 auto;
+}
+
+.rates_table_body {
+overflow: auto;
+height: 245px;
+width: 830px;
+}
+
+.picker {
+float: left;
+width: 50px;
+text-align: left;
+}
+
+.pickerarrow {
+margin-left: 6px;
+margin-top: 13px;
+}
+
+.mark {
+float: left;
+width: 50px;
+text-align: left;
+}
+
+.truckclass {
+float: left;
+width: 135px;
+text-align: left;
+}
+
+.trucktype {
+float: left;
+width: 135px;
+text-align: left;
+margin-left: 10px;
+}
+
+.baserate {
+float: left;
+width: 85px;
+text-align: left;
+margin-left: 10px;
+}
+
+.ratesinformation {
+float: left;
+width: 350px;
+text-align: left;
+margin-left: 30px;
+}
+
+.tableheader {
+margin-top: 5px;
+}
+
+.rates_result_row {
+background-color: #f4f4f4;
+margin-right: 5px;
+}
+
+.box730 {
+width: 710px;
+margin: 20px auto;
+}
+
+.reso_box4 {
+float: left;
+text-align: left;
+width: 370px;
+}
+
+.reso_box5 {
+float: left;
+text-align: left;
+width: 315px;
+margin-left: 20px;
+}
+
+.contact_txt {
+width: 330px;
+}
+
+.confirm_note {
+width: 330px;
+margin-top: 20px;
+}
+
+.reso_box6 {
+float: left;
+text-align: left;
+width: 350px;
+}
+
+.reso_box7 {
+float: left;
+text-align: left;
+width: 340px;
+margin-left: 10px;
+}
+
+.box780 {
+width: 780px;
+overflow: hidden;
+margin: 0 auto;
+}
+
+.reso_box8 {
+float: left;
+text-align: left;
+}
+
+.done_txt {
+float: left;
+width: 280px;
+margin-left: 20px;
+}
+
+.orangebar {
+background-color: #ef6202;
+display: inline-block;
+color: white;
+margin-top: 10px;
+padding: 0px 2px 0px 2px;
+}
+
+.resonum {
+font-weight: bold;
+}
+
+.box224 {
+width: 219px;
+overflow: hidden;
+}
+
+.box224a {
+width: 219px;
+overflow: hidden;
+margin-left: 20px;
+}
+
+.box295 {
+width: 295px;
+overflow: hidden;
+margin-left: 20px;
+}
+
+
+.thankyou_box {
+width: 458px;
+float: left;
+}
+
+.thankyou_select {
+margin-left: 20px;
+float: left;
+}
+
+.rules_popup {
+background:url('../images/reservations/popup.png') no-repeat;
+position: absolute;
+top: 235px;
+left: 302px;
+width: 501px;
+height: 278px;
+}
+
+.popup_txt {
+margin-top: 50px;
+margin-left: 40px;
+width: 400px;
+height: 150px;
+text-align: left;
+}
+
+a.popupclose {
+background:url('../images/but_blk_close.png') no-repeat;
+width: 100px;
+height: 24px;
+display: block;
+}
+
+a.popupclose:hover {
+background-position: 0px -24px;
+}
+
+.popupclose {
+position: absolute;
+top: 7px;
+right: 7px;
+}
+
+
+
+
+

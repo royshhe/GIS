@@ -1,0 +1,7 @@
+USE [GISData]
+GO
+/****** Object:  User [GPS]    Script Date: 2021-07-10 1:50:41 PM ******/
+CREATE USER [GPS] FOR LOGIN [BUDGETBC\GPS] WITH DEFAULT_SCHEMA=[GPS]
+GO
+ALTER ROLE [OptionalExtra] ADD MEMBER [GPS]
+GO

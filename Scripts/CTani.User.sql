@@ -1,0 +1,37 @@
+USE [GISData]
+GO
+/****** Object:  User [CTani]    Script Date: 2021-07-10 1:50:41 PM ******/
+CREATE USER [CTani] FOR LOGIN [BUDGETBC\CTani] WITH DEFAULT_SCHEMA=[CTani]
+GO
+ALTER ROLE [db_ddladmin] ADD MEMBER [CTani]
+GO
+ALTER ROLE [db_datareader] ADD MEMBER [CTani]
+GO
+ALTER ROLE [ReportRole] ADD MEMBER [CTani]
+GO
+ALTER ROLE [WebAppUserRole] ADD MEMBER [CTani]
+GO
+ALTER ROLE [InterBranch] ADD MEMBER [CTani]
+GO
+ALTER ROLE [FleetAccounting] ADD MEMBER [CTani]
+GO
+ALTER ROLE [Rate] ADD MEMBER [CTani]
+GO
+ALTER ROLE [OnlineUserRole] ADD MEMBER [CTani]
+GO
+ALTER ROLE [ar_fee_processer] ADD MEMBER [CTani]
+GO
+ALTER ROLE [CSRIncentive] ADD MEMBER [CTani]
+GO
+ALTER ROLE [HR] ADD MEMBER [CTani]
+GO
+ALTER ROLE [PM] ADD MEMBER [CTani]
+GO
+ALTER ROLE [OptionalExtra] ADD MEMBER [CTani]
+GO
+ALTER ROLE [Claims] ADD MEMBER [CTani]
+GO
+ALTER ROLE [GISUserManagement] ADD MEMBER [CTani]
+GO
+ALTER ROLE [db_executer] ADD MEMBER [CTani]
+GO

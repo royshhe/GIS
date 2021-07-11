@@ -1,0 +1,35 @@
+USE [GISData]
+GO
+/****** Object:  StoredProcedure [dbo].[SecGetUserIDByID]    Script Date: 2021-07-10 1:50:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ 
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+----  Programmer:  Roy He
+----  Date: 	 Aug 31, 2001
+----  Details:	 Get GIS User info
+-------------------------------------------------------------------------------------------------------------------
+
+Create PROCEDURE [dbo].[SecGetUserIDByID]   
+
+	@user_id varchar(255) 
+	
+as
+
+	SET NOCOUNT ON	
+
+	select user_id 
+	from gisusers
+	where user_id = @user_id
+		and active = 1
+
+GO

@@ -1,0 +1,7 @@
+USE [GISData]
+GO
+/****** Object:  User [BUDGETBC\DWang]    Script Date: 2021-07-10 1:50:41 PM ******/
+CREATE USER [BUDGETBC\DWang] FOR LOGIN [BUDGETBC\DWang] WITH DEFAULT_SCHEMA=[BUDGETBC\DWang]
+GO
+ALTER ROLE [ar_fee_processer] ADD MEMBER [BUDGETBC\DWang]
+GO

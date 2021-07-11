@@ -1,0 +1,17 @@
+USE [GISData]
+GO
+/****** Object:  Table [dbo].[TimeBlock]    Script Date: 2021-07-10 1:50:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TimeBlock](
+	[TimeBlockName] [char](10) NOT NULL,
+	[StartTime] [varchar](50) NULL,
+	[EndTime] [varchar](50) NULL,
+ CONSTRAINT [PK_TimeBlock] PRIMARY KEY CLUSTERED 
+(
+	[TimeBlockName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+GO

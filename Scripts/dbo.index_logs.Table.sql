@@ -1,0 +1,17 @@
+USE [GISData]
+GO
+/****** Object:  Table [dbo].[index_logs]    Script Date: 2021-07-10 1:50:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[index_logs](
+	[log_id] [int] IDENTITY(1,1) NOT NULL,
+	[event_data] [xml] NOT NULL,
+	[changed_by] [sysname] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[log_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO

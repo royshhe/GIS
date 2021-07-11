@@ -1,0 +1,36 @@
+USE [GISData]
+GO
+/****** Object:  StoredProcedure [dbo].[LockReservedSalesAccessory]    Script Date: 2021-07-10 1:50:50 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+
+
+
+
+/*
+PURPOSE: To lock the reserved sales accessory for a reservation
+AUTHOR: Cindy Yee
+DATE CREATED: Oct 6 1999
+CALLED BY: Reservation
+MOD HISTORY:
+Name    Date        Comments
+*/
+CREATE PROCEDURE [dbo].[LockReservedSalesAccessory]
+	@ConfirmNum varchar(11)
+AS
+	DECLARE @nConfirmNum integer
+	SELECT  @nConfirmNum = CAST(NULLIF(@ConfirmNum, '') AS integer)
+
+	SELECT	COUNT(*)
+	  FROM	reserved_sales_accessory WITH(UPDLOCK)
+	 WHERE	confirmation_number = @nConfirmNum
+
+
+
+
+
+
+
+GO

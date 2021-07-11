@@ -1,0 +1,20 @@
+USE [GISData]
+GO
+/****** Object:  Table [dbo].[Reservation_Turndown_Reason]    Script Date: 2021-07-10 1:50:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Reservation_Turndown_Reason](
+	[Turndown_Reason_ID] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [varchar](255) NULL,
+ CONSTRAINT [PK_Reservation_Turndown_Reason] PRIMARY KEY CLUSTERED 
+(
+	[Turndown_Reason_ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY],
+ CONSTRAINT [UC_Reservation_Turndown_Reasn1] UNIQUE NONCLUSTERED 
+(
+	[Description] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+GO

@@ -1,0 +1,11 @@
+Maestro  Issues for Fran Doty:
+
+1) Manuals for screen b502, check rate availability
+2) How to view all leisure and culmulative rates in the system, with effective, terminated date and other details.
+3) How to re-set the drop off locations for culmulative rates.  Which form to use
+4) Re-arrange zones and drop charges.
+5) Open zones.
+6) Get list of culmulative rates.  (e.g. G1I, G2I, GTI,etc)
+7) Re-set/re-assign DO locations for culmulative rates.
+8) Assign rate amounts.
+9) Update zone document and rates document
