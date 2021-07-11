@@ -1,6 +1,16 @@
 USE [GISData]
 GO
-/****** Object:  StoredProcedure [dbo].[FA_CreateVehicleAmotization]    Script Date: 2021-07-10 1:50:48 PM ******/
+
+/*
+PROCEDURE NAME: FA_CreateVehicleAmotization
+PURPOSE: Create Vehicle Depreciation Amotization
+
+AUTHOR: Roy He
+DATE CREATED: 2019/04/20
+USED BY: General Ledger Report
+MOD HISTORY:
+Name 		Date		Comments
+*/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
