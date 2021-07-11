@@ -1,7 +1,0 @@
-USE [GISData]
-GO
-/****** Object:  User [BUDGETBC\wsbvm401$]    Script Date: 2021-07-10 1:50:41 PM ******/
-CREATE USER [BUDGETBC\wsbvm401$] FOR LOGIN [BUDGETBC\WSBVM401$] WITH DEFAULT_SCHEMA=[dbo]
-GO
-ALTER ROLE [db_owner] ADD MEMBER [BUDGETBC\wsbvm401$]
-GO

@@ -1,7 +1,0 @@
-USE [GISData]
-GO
-/****** Object:  User [BUDGETBC\Eho]    Script Date: 2021-07-10 1:50:41 PM ******/
-CREATE USER [BUDGETBC\Eho] WITH DEFAULT_SCHEMA=[BUDGETBC\Eho]
-GO
-ALTER ROLE [ar_fee_processer] ADD MEMBER [BUDGETBC\Eho]
-GO

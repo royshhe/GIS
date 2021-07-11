@@ -1,0 +1,17 @@
+USE [GISData]
+GO
+/****** Object:  Table [dbo].[FA_Dealer]    Script Date: 2021-07-10 1:50:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FA_Dealer](
+	[Dealer_Code] [smallint] NOT NULL,
+	[Customer_Code] [char](12) NULL,
+	[Vendor_Code] [char](12) NULL,
+ CONSTRAINT [PK_FA_Dealer] PRIMARY KEY CLUSTERED 
+(
+	[Dealer_Code] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+GO
