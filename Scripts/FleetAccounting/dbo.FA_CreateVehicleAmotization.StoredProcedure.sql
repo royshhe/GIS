@@ -7,7 +7,7 @@ PURPOSE: Create Vehicle Depreciation Amotization
 
 AUTHOR: Roy He
 DATE CREATED: 2019/04/20
-USED BY: General Ledger Report
+USED BY: Fleet Accounting
 MOD HISTORY:
 Name 		Date		Comments
 */
